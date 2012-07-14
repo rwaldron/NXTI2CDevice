@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>NXTServorunServo</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<h2>NXTServo.runServo()</h2>
+<h4>Description</h4>
+<p>Run a Servo to a certain position at a certain speed
+</p>
+<h4>Syntax</h4>
+<p>runServo(uint8_t number, uint8_t position, uint8_t speed); <br>
+</p>
+<h4>Parameters</h4>
+<p><strong>uint8_t number: </strong>The number of the servo you want
+to control.&nbsp; Servo_1, 2, ..., 8&nbsp;<br>
+</p>
+<p><strong>uint8_t position</strong>: The position you want to set the
+servo to.&nbsp; [500, 2500] or Servo_Position_Default
+</p>
+<p><strong>uint8_t speed</strong>: The speed you want the servo to run
+at.&nbsp; [0, inf] or Servo_Speed_Full<br>
+</p>
+<h4>Returns</h4>
+<p>None
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;              // Needs to be included here for //<br>                                // the NXTI2CDevice to work      //<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;NXTServo.h&gt;<br><br>NXTServo          srv;<br><br>void<br>setup()<br>{<br>  Serial.begin(9600);         // start serial for output<br>  delay(1000);                  <br>  srv.runServo(Servo_1,   // Servo_1, 2, 3, ..., 8<br>                     200, // [500,2500] Servo_Default<br>                     0);  // [0, inf] or Speed_Full<br>  delay(1000);                  <br>  srv.runServo(Servo_1, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_2, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_2, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_3, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_3, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_4, 200, 0);<br>  delay(1000);                 <br>  srv.runServo(Servo_4, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_5, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_5, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_6, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_6, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_7, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_7, 400, 0);<br>  delay(1000);<br>  srv.runServo(Servo_8, 200, 0);<br>  delay(1000);                  <br>  srv.runServo(Servo_8, 400, 0);<br>  delay(1000);<br>  Serial.println("Program Finished");<br>  <br>}<br><br>void<br>loop()                          // After the setup the LED blinks to show<br>                                // the program is complete<br>{<br>  digitalWrite(13, HIGH);     // set the LED on<br>  delay(1000);                // wait <br>  digitalWrite(13, LOW);      // set the LED off<br>  delay(1000);                // wait<br>}<br><br><br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>

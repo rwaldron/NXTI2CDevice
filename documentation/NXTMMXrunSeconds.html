@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>NXTMMXrunSecods</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<p></p>
+<h2>NXTMMX.runSecods()</h2>
+<h4>Description</h4>
+<p>Run deisred motor(s) for a certain time.<br>
+</p>
+<h4>Syntax</h4>
+<p>
+</p>
+<p style="margin-bottom: 0in;">
+</p>
+<p style="margin-bottom: 0in;">runSeconds(uint8_t which_motors,
+uint8_t direction, int speed, uint8_t duration, uint8_t
+wait_for_completion, uint8_t next_action);</p>
+<p>
+</p>
+<h4>Parameters</h4>
+<strong>uint8_t which_motor: </strong>Which motor(s) to run.
+MMX_Motor_1 or MMX_Motor_2 or MMX_Motor_Both<br>
+<br>
+<strong>uint8_t direction: </strong>Which direction to run.
+MMX_Direction_Forward or MMC_Direction_Backward<br>
+<br>
+<strong>int speed: </strong>Set speed to run at.
+MMX_Speed_Full/Medium/Slow or [0-100]<br>
+<strong><br>
+uint8_t duration: </strong>Time to run in seconds.<br>
+<br>
+<strong>uint8_t wait_for_completion: </strong>Decide whether to wait
+for completion. MMX_Completion_Wait_For/Dont_Wait<br>
+<br>
+<strong>uint8_t next_action: </strong>What to do next.&nbsp;
+MMX_Next_Action_Float/Brake_Brake_Hold<strong></strong><br>
+<h4>Returns</h4>
+<p>None<br>
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;               // needs to be included here for the<br>                                // NXTI2CDevice to work<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;NXTMMX.h&gt;<br><br>NXTMMX          mmx;<br><br>void<br>setup()<br>{<br>    mmx.reset();                // resets the encoder positions to zero<br><br>    int             seconds = 2;<br><br>    // Drive forward and backward for a specific number of seconds<br>    delay(1000);<br>    mmx.runSeconds(MMX_Motor_Both, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Slow,<br>                   seconds, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_Float);<br>    delay(1000);<br>    mmx.runSeconds(MMX_Motor_Both, <br>                   MMX_Direction_Reverse, <br>                   MMX_Speed_Slow,<br>                   seconds, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_Float);<br><br>    int             degrees = 90;<br><br>    // Go forward a specific number of degrees<br>    delay(1000);<br>    mmx.runDegrees(MMX_Motor_Both, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Medium,<br>                   degrees, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br><br>    // and backward the same number of degrees<br>    delay(1000);<br>    mmx.runDegrees(MMX_Motor_Both, <br>                   MMX_Direction_Reverse, <br>                   MMX_Speed_Medium,<br>                   degrees, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br>}<br><br>void<br>loop()                          // After the setup the LED blinks to show<br>                                // the program is complete<br>{<br>    digitalWrite(13, HIGH);     // set the LED on<br>    delay(1000);                // wait <br>    digitalWrite(13, LOW);      // set the LED off<br>    delay(1000);                // wait<br>}<br><br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>

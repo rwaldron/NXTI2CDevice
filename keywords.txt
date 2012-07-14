@@ -1,0 +1,121 @@
+
+#######################################
+# Syntax Coloring Map For NXTI2CDevices
+#######################################
+
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+NXTI2CDevice	KEYWORD1
+NXTMMX 			KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# NXTI2CDevice
+readRegisters	KEYWORD2
+readByte	KEYWORD2
+readInteger	KEYWORD2
+readLong	KEYWORD2
+readString	KEYWORD2
+writeRegisters	KEYWORD2
+writeByte	KEYWORD2
+writeInteger	KEYWORD2
+writeLong	KEYWORD2
+getWriteErrorCode	KEYWORD2
+getFirmwareVersion	KEYWORD2
+getVendorID	KEYWORD2
+getDeviceID	KEYWORD2
+setWriteErrorCode	KEYWORD2
+
+#NXTMMX
+
+getBatteryVoltage	KEYWORD2
+issueCommand		KEYWORD2
+setEncoderTarget	KEYWORD2
+getEncoderTarget	KEYWORD2
+setSpeed	KEYWORD2
+getSpeed	KEYWORD2
+getTimeToRun	KEYWORD2
+getTimeToRun	KEYWORD2
+setCommandRegB	KEYWORD2
+getCommandRegB	KEYWORD2
+setCommandRegA	KEYWORD2
+getCommandRegA	KEYWORD2
+getEncoderPosition	KEYWORD2
+getMotorStatusByte	KEYWORD2
+getMotorTasksRunningByte	KEYWORD2
+setEncoderPID	KEYWORD2
+setSpeedPID	KEYWORD2
+setPassCount	KEYWORD2
+setTolerance	KEYWORD2
+reset	KEYWORD2
+startMotorsInSync	KEYWORD2
+resetEncoder	KEYWORD2
+setSpeedTimeAndControl	KEYWORD2
+setEncoderSpeedTimeAndControl	KEYWORD2
+isTimeDone	KEYWORD2
+waitUntilTimeDone	KEYWORD2
+isTachoDone	KEYWORD2
+waitUntilTachoDone	KEYWORD2
+runUnlimited	KEYWORD2
+runSeconds	KEYWORD2
+runTachometer	KEYWORD2
+runDegrees	KEYWORD2
+runRotations	KEYWORD2
+stop	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+MMX_CONTROL_SPEED		LITERAL1
+MMX_CONTROL_RAMP		LITERAL1
+MMX_CONTROL_RELATIVE		LITERAL1
+MMX_CONTROL_TACHO		LITERAL1
+MMX_CONTROL_BRK		LITERAL1
+MMX_CONTROL_ON		LITERAL1
+MMX_CONTROL_TIME		LITERAL1
+MMX_CONTROL_GO		LITERAL1
+MMX_COMMAND		LITERAL1
+MMX_VOLTAGE		LITERAL1
+MMX_SETPT_M1		LITERAL1
+MMX_SPEED_M1		LITERAL1
+MMX_TIME_M1		LITERAL1
+MMX_CMD_B_M1		LITERAL1
+MMX_CMD_A_M1		LITERAL1
+MMX_SETPT_M2		LITERAL1
+MMX_SPEED_M2		LITERAL1
+MMX_TIME_M2		LITERAL1
+MMX_CMD_B_M2		LITERAL1
+MMX_CMD_A_M2		LITERAL1
+MMX_POSITION_M1		LITERAL1
+MMX_POSITION_M2		LITERAL1
+MMX_STATUS_M1		LITERAL1
+MMX_STATUS_M2		LITERAL1
+MMX_TASKS_M1		LITERAL1
+MMX_TASKS_M2		LITERAL1
+MMX_ENCODER_PID		LITERAL1
+MMX_SPEED_PID		LITERAL1
+MMX_PASS_COUNT		LITERAL1
+MMX_TOLERANCE		LITERAL1
+MMX_Motor_1		LITERAL1
+MMX_Motor_2		LITERAL1
+MMX_Motor_Both		LITERAL1
+MMX_Next_Action_Float		LITERAL1
+MMX_Next_Action_Brake		LITERAL1
+MMX_Next_Action_BrakeHold		LITERAL1
+MMX_Direction_Forward		LITERAL1
+MMX_Direction_Reverse		LITERAL1
+MMX_Move_Relative		LITERAL1
+MMX_Move_Absolute		LITERAL1
+MMX_Completion_Wait_For		LITERAL1
+MMX_Completion_Dont_Wait		LITERAL1
+MMX_Speed_Full		LITERAL1
+MMX_Speed_Medium		LITERAL1
+MMX_Speed_Slow		LITERAL1
+

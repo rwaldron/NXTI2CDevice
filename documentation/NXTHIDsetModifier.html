@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>NXTHIDsetModifier</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<p></p>
+<h2>NXTHID.setModifier()</h2>
+<h4>Description</h4>
+<p>Set the keyboard modifier in direct data mode<br>
+</p>
+<h4>Syntax</h4>
+<p>
+</p>
+<p style="margin-bottom: 0in;">setModifier(uint8_t mod);</p>
+<h4>Parameters</h4>
+<p><strong>uint8_t mod: </strong>These are the key modifiers for
+direct data mode. HID_None, L_Ctrl, L_Shift ,&nbsp; L_Alt, L_GUI,
+R_Ctrl, R_Shift, R_Alt, R_GUI<br>
+</p>
+<h4>Returns</h4>
+<p>None
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;               // Needs to be included here for //<br>                                // the NXTI2CDevice to work      //<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;NXTHID.h&gt;<br><br>NXTHID          hid;<br><br>void<br>setup()<br>{<br>  Serial.begin(9600);         // start serial for output<br>  delay(1000);  <br>//Display "Hello World!!!"<br>  hid.setModifier(HID_L_Shift);  ///HID_None, L_Ctrl, L_Shift, L_Alt, L_GUI, R_Ctrl, R_Shift, R_Alt, or R_GUI<br>  hid.directMode(); <br>  hid.sendKeyboardData(0x0B);<br>  hid.setModifier(HID_None); <br>  hid.sendKeyboardData(0x08);  <br>  hid.sendKeyboardData(0x0F);<br>  hid.sendKeyboardData(0x0F);<br>  hid.sendKeyboardData(0x12);<br>  hid.sendKeyboardData(0x2C);<br>  hid.setModifier(HID_L_Shift);<br>  hid.sendKeyboardData(0x1A);<br>  hid.setModifier(HID_None); <br>  hid.sendKeyboardData(0x12);<br>  hid.sendKeyboardData(0x15);<br>  hid.sendKeyboardData(0x0F);<br>  hid.sendKeyboardData(0x07);<br>  hid.setModifier(HID_L_Shift);<br>  hid.sendKeyboardData(0x1E);<br>  hid.sendKeyboardData(0x28);<br><br>  hid.sendTextString("Hello!\rHello Again!!\r");<br><br>  delay(1000);  <br>  Serial.println("Program Finished");<br><br>}<br><br>void<br>loop()                          // After the setup the LED blinks to show<br>                                // the program is complete<br>{<br>  digitalWrite(13, HIGH);     // set the LED on<br>  delay(1000);                // wait<br>  digitalWrite(13, LOW);      // set the LED off<br>  delay(1000);                // wait<br>}<br><br><br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>

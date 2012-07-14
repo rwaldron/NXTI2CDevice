@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>ACCLNxgetXTilt</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<p></p>
+<h2>ACCLNx.getXTilt()</h2>
+<h4>Description</h4>
+<p>Gets the current tilt reading in the x-axis<br>
+</p>
+<h4>Syntax</h4>
+<p>getXTilt();&nbsp;<br>
+</p>
+<h4>Parameters</h4>
+None
+<h4>Returns</h4>
+<p>X Tilt<br>
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;               // Needs to be included here for //<br>                                // the NXTI2CDevice to work      //<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;ACCLNx.h&gt;<br><br>ACCLNx          accl;<br><br>short           xtilt;<br>short           ytilt;<br>short           ztilt;<br>int             xaccl;<br>int             yaccl;<br>int             zaccl;<br><br>void<br>setup()<br>{<br>    Serial.begin(9600);         // start serial for output<br><br>}<br><br>void<br>loop()<br>{<br>    delay(1000);<br><br>    xtilt = accl.getXTilt();<br>    Serial.print("X Tilt:");<br>    Serial.println(xtilt);<br>    ytilt = accl.getYTilt();<br>    Serial.print("Y Tilt:");<br>    Serial.println(ytilt);<br>    ztilt = accl.getZTilt();<br>    Serial.print("Z Tilt:");<br>    Serial.println(ztilt);<br><br>    xaccl = accl.getXAccl();<br>    Serial.print("X Acceleration:");<br>    Serial.println(xaccl);<br>    yaccl = accl.getYAccl();<br>    Serial.print("Y Acceleration:");<br>    Serial.println(yaccl);<br>    zaccl = accl.getZAccl();<br>    Serial.print("Z Acceleration:");<br>    Serial.println(zaccl);<br>    Serial.println();<br><br>}<br><br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>

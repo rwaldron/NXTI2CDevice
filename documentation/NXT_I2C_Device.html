@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>NXT I2C Library</title>
+</head>
+<body>
+<div id="page">
+<!--PageHeaderFmt-->
+<!--/PageHeaderFmt--><!--PageLeftFmt-->
+<div id="pagetext">
+<div id="wikitext">
+<h1>NXT I2C Library<br>
+</h1>
+<p>This library allows an Arduino board to connect to NXT sensors and
+controllers.
+</p>
+<h2>Controllers</h2>
+<h4>NXTMMX class</h4>
+<p>Able to connect and control two NXT motors with Arduino. </p>
+<ul>
+  <li><a class="wikilink" href="NXTMMXgetBatteryVoltage.html">getBatteryVoltage()</a></li>
+  <li><a class="wikilink" href="NXTMMXgetEncoderPosition.html">getEncoderPosition()</a></li>
+  <li><a class="wikilink" href="NXTMMXreset.html">reset()<br>
+    </a></li>
+  <li><a class="wikilink" href="NXTMMXrunUnlimited.html">runUnlimited()<br>
+    </a></li>
+  <li><a class="wikilink" href="NXTMMXrunSeconds.html">runSeconds()<br>
+    </a></li>
+  <li><a class="wikilink" href="NXTMMXrunTachometer.html">runTachometer()<br>
+    </a></li>
+  <li><a class="wikilink" href="NXTMMXrunDegrees.html">runDegrees()<br>
+    </a></li>
+  <li><a class="wikilink" href="NXTMMXrunRotations.html">runRotations()</a></li>
+</ul>
+<br>
+<h4>NXTServo Class<br>
+</h4>
+<p>NXTServo-v2 allows you to control speed and position of up to 8 RC
+servo motors (or mini/micro RC servos) <br>
+<br>
+</p>
+<ul>
+  <li><a class="wikilink" href="NXTServorunServo.html">runServo()</a></li>
+  <li><a class="wikilink" href="NXTServosetSpeed.html">setSpeed()</a></li>
+  <li><a class="wikilink" href="NXTServosetPosition.html">setPosition()</a></li>
+  <li><a class="wikilink" href="NXTServoBatteryVoltage.html">BatteryVoltage()</a></li>
+  <li><a class="wikilink" href="NXTServoreset.html">reset() <br>
+    </a></li>
+  <li><a class="wikilink" href="NXTServostoreInitial.html">storeInitial()
+    <br>
+    </a></li>
+  <li><a class="wikilink" href="NXTServohalfMacro.html">halfMacro() <br>
+    </a></li>
+  <li><a class="wikilink" href="NXTServoresumeMacro.html">resumeMacro()
+    <br>
+    </a></li>
+  <li><a class="wikilink" href="NXTServogotoEEPROM.html">gotoEEPROM() <br>
+    </a></li>
+  <li><a class="wikilink" href="NXTServoeditMacro.html">editMacro() <br>
+    </a></li>
+</ul>
+<br>
+<h4>PFMate class</h4>
+<p>PF Motor controller for NXT is designed to be a closely
+integrated controller for PF motors<br>
+<br>
+</p>
+<ul>
+  <li><a class="wikilink" href="PFMatesendSignal.html">sendSignal()</a></li>
+  <li><a class="wikilink" href="PFMatecontrolMotor.html">controlMotor()</a></li>
+  <li><a class="wikilink" href="PFMateissueCommand.html">issueCommand()</a></li>
+</ul>
+<br>
+<h4>NXTHID class</h4>
+<p>Send HID input events (such as keyboard key presses) to host
+computer. These events can be received by any program that can run on
+your PC.<br>
+<br>
+</p>
+<ul>
+  <li><a class="wikilink" href="NXTHIDtransmitData.html">transmitData()</a></li>
+  <li><a class="wikilink" href="NXTHIDasciiMode.html">asciiMode()</a></li>
+  <li><a class="wikilink" href="NXTHIDdirectMode.html">directMode()</a></li>
+  <li><a class="wikilink" href="NXTHIDsetModifier.html">setModifier()</a></li>
+  <li><a class="wikilink" href="NXTHIDsendKeyboardData.html">sendKeyboardData()<br>
+    </a></li>
+</ul>
+<h2><br>
+</h2>
+<h2>Sensors</h2>
+<h4>ACCLNx class</h4>
+<p>This tiny and lightweight 3 axis accelerometer has multiple
+sensitivity levels of gravity. Use as a Tilt sensor, or measuring
+velocity or accelerations. </p>
+<ul>
+  <li><a class="wikilink" href="ACCLNxgetXTilt.html">getXTilt()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetYTilt.html">getYTilt()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetZTilt.html">getZTilt()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetXAccl.html">getXAccl()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetYAccl.html">getYAccl()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetZAccl.html">getZAccl()</a></li>
+  <li><a class="wikilink" href="ACCLNxgetSens.html">getSens()</a></li>
+</ul>
+<br>
+<h4>DISTNx class</h4>
+<p>High Precision Infrared distance sensor. </p>
+<ul>
+  <li><a class="wikilink" href="DISTNxgetDist.html">getDist()</a></li>
+  <li><a class="wikilink" href="DISTNxgetVolt.html">getVolt()</a></li>
+  <li><a class="wikilink" href="DISTNxgetType.html">getType()</a></li>
+</ul>
+<br>
+<h4>PSPNx class</h4>
+<p>Control your Arduino robot using a Sony PlayStation 2 Controller
+joystick. (or any other PS2 compatible remote control/joystick). </p>
+<ul>
+  <li><a class="wikilink" href="PSPNxgetXLJoy.html">getXLJoy()</a></li>
+  <li><a class="wikilink" href="PSPNxgetYLJoy.html">getYLJoy()</a></li>
+  <li><a class="wikilink" href="PSPNxgetXRJoy.html">getXRJoy()</a></li>
+  <li><a class="wikilink" href="PSPNxgetYRJoy.html">getYRJoy()</a></li>
+  <li><a class="wikilink" href="PSPNxgetButtons.html">getButtons()</a></li>
+</ul>
+<br>
+<h4>LineLeader class</h4>
+<p>Has an array of 8 sensors with a controlled light source, to detect
+a line. </p>
+<ul>
+  <li><a href="PFMatesendSignal.html" class="wikilink">getSteering()</a></li>
+  <li><a class="wikilink" href="LineLeadergetAverage.html">getAverage()</a></li>
+  <li><a class="wikilink" href="LineLeadergetResult.html">getResult()</a></li>
+</ul>
+<br>
+<h4>NXTPowerMeter class</h4>
+<p> Measure the power consumption of your robot (or any other device)
+while in operation. </p>
+<ul>
+  <li>
+    <p style="margin-bottom: 0in;"><a class="wikilink"
+ href="NXTPowerMeterresetCounters.html">resetCounters()</a></p>
+  </li>
+  <li><a class="wikilink" href="NXTPowerMeterreadPresentCurrent.html">readPresentCurrent()</a></li>
+  <li><a class="wikilink" href="NXTPowerMeterreadPresentVoltage.html">readPresentVoltage()</a></li>
+  <li><a class="wikilink" href="NXTPowerMeterreadCapacityUsed.html">readCapacityUsed()</a></li>
+  <li><a class="wikilink" href="NXTPowerMeterreadElapsedTime.html">readElapsedTime()</a></li>
+</ul>
+<br>
+<h4>RTC class</h4>
+<p>Real-time Clock. </p>
+<ul>
+  <li><a class="wikilink" href="RTCgetSeconds.html">getSeconds()</a></li>
+  <li><a class="wikilink" href="RTCgetMinutes.html">getMinutes()</a></li>
+  <li><a class="wikilink" href="RTCgetHours.html">getHours()</a></li>
+  <li><a class="wikilink" href="RTCgetDayWeek.html">getDayWeek()</a></li>
+  <li><a class="wikilink" href="RTCgetDayMonth.html">getDayMonth()</a></li>
+  <li><a href="RTCgetMonth.html" class="wikilink">getMonth()</a></li>
+  <li><a class="wikilink" href="RTCgetYear.html">getYear()<br>
+    </a></li>
+</ul>
+<br>
+<h4>NXTCam class</h4>
+<p>This vision subsystem tracks upto 8 colored objects. It reports
+coordinates of each object to Arduino. Can also be connected to a PC on
+USB port. </p>
+<ul>
+  <li><a class="wikilink" href="NXTCamissueCommand.html">issueCommand()</a></li>
+  <li><a class="wikilink" href="NXTCamsortSize.html">sortSize()</a></li>
+  <li><a class="wikilink" href="NXTCamselectObjectMode.html">selectObjectMode()</a></li>
+  <li><a class="wikilink" href="NXTCamenableTracking.html">enableTracking()</a></li>
+  <li><a class="wikilink" href="NXTCamdisableTracking.html">disableTracking()</a></li>
+  <li><a class="wikilink" href="NXTCamgetColorMap.html">getColorMap()</a></li>
+  <li><a class="wikilink" href="NXTCamselectLineMode.html">selectLineMode()</a></li>
+  <li><a class="wikilink" href="NXTCamresetCamera.html">resetCam()</a></li>
+  <li><a class="wikilink" href="NXTCamsortColor.html">sortColor()</a></li>
+  <li><a class="wikilink" href="NXTCamsortNone.html">sortNone()</a></li>
+  <li><a class="wikilink" href="NXTCamgetNumberObjects.html">getNumberObjects()</a></li>
+  <li><a class="wikilink" href="NXTCamgetBlobs.html">getBlobs()</a></li>
+</ul>
+<br>
+<span style="text-decoration: underline;"></span>
+<h2></h2>
+<ul>
+  <span style="text-decoration: underline;"></span>
+</ul>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</div>
+<div class="addthis_container addthis_toolbox addthis_default_style"
+ addthis:url="http://arduino.cc/en/Reference/Ethernet"
+ addthis:title="Arduino Wiki English"><span class="addthis_separator"></span>
+<script type="text/javascript"
+ src="http://s7.addthis.com/js/250/addthis_widget.js#username=arduinoteam"></script></div>
+<!-- AddThis Button END -->
+</div>
+<!--PageFooterFmt-->
+<!--/PageFooterFmt--></div>
+</body>
+</html>

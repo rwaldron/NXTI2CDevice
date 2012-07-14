@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>NXTMMXrunSecods</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<p></p>
+<h2>NXTMMX.runTachometer()</h2>
+<h4>Description</h4>
+<p>Run deisred motor(s) till a certain encoder position has been reached<br>
+</p>
+<h4>Syntax</h4>
+<p>
+</p>
+<p style="margin-bottom: 0in;">
+</p>
+<p style="margin-bottom: 0in;">
+</p>
+<p style="margin-bottom: 0in;">runTachometer(uint8_t which_motors,
+uint8_t direction, int speed, long tachometer, uint8_t relative,
+uint8_t wait_for_completion, uint8_t next_action);</p>
+<p>
+</p>
+<h4>Parameters</h4>
+<strong>uint8_t which_motor: </strong>Which motor(s) to run.
+MMX_Motor_1 or MMX_Motor_2 or MMX_Motor_Both<br>
+<br>
+<strong>uint8_t direction: </strong>Which direction to run.
+MMX_Direction_Forward or MMC_Direction_Backward<br>
+<br>
+<strong>int speed: </strong>Set speed to run at.
+MMX_Speed_Full/Medium/Slow or [0-100]<br>
+<strong><br>
+long tachometer: </strong>Encoder position to run till.<br>
+<br>
+<strong>uint8_t relative: </strong>Decide whether relative to current
+position or not. MMX_Move_Relative/Absolute<br>
+<br>
+<strong>uint8_t wait_for_completion: </strong>Decide whether to wait
+for completion. MMX_Completion_Wait_For/Dont_Wait<br>
+<br>
+<strong>uint8_t next_action: </strong>What to do next.&nbsp;
+MMX_Next_Action_Float/Brake_Brake_Hold<strong></strong><br>
+<h4>Returns</h4>
+<p>None<br>
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;               // needs to be included here for the<br>                                // NXTI2CDevice to work<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;NXTMMX.h&gt;<br><br>NXTMMX          mmx;<br><br>void<br>setup()<br>{<br>    Serial.begin(9600);         // start serial for output<br>    delay(1000);                // wait one second, allowing time to<br>                                // activate the serial monitor<br>    mmx.reset();                // resets the encoder positions to zero<br><br>    long            target = 1260;  // Define target to 1260<br>    int             degrees1;<br>    int             degrees2;<br>    char            str[60];<br>    int             p1;<br>    int             p2;<br><br>    // Drive both motors to a specific position<br>    Serial.println("Change the positions");<br>    delay(10000);<br>    p1 = mmx.getEncoderPosition(MMX_Motor_1);<br>    p2 = mmx.getEncoderPosition(MMX_Motor_2);<br>    Serial.print("M1 pos: ");<br>    Serial.print(p1);<br>    Serial.print("   M2 pos: ");<br>    Serial.print(p2);<br>    Serial.println();<br>    sprintf(str, "Motors to Target Position %d ", target);<br>    Serial.println(str);<br>    str[0] = '\0';<br>    degrees1 = target - p1;<br>    degrees2 = target - p2;<br>    Serial.print("Turn Motor 1 ");<br>    Serial.print(degrees1);<br>    Serial.println(" degrees to reach target position");<br>    Serial.print("Turn Motor 2 ");<br>    Serial.print(degrees2);<br>    Serial.println(" degrees to reach target position");<br>    mmx.runDegrees(MMX_Motor_1, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Medium,<br>                   degrees1, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br>    mmx.runDegrees(MMX_Motor_2, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Medium,<br>                   degrees2, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br><br>    // A second check that gets the motor closer to the target position<br>    p1 = mmx.getEncoderPosition(MMX_Motor_1);<br>    p2 = mmx.getEncoderPosition(MMX_Motor_2);<br>    degrees1 = target - p1;<br>    degrees2 = target - p2;<br>    mmx.runDegrees(MMX_Motor_1, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Medium,<br>                   degrees1, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br>    mmx.runDegrees(MMX_Motor_2, <br>                   MMX_Direction_Forward, <br>                   MMX_Speed_Medium,<br>                   degrees2, <br>                   MMX_Completion_Wait_For,<br>                   MMX_Next_Action_BrakeHold);<br><br>    p1 = mmx.getEncoderPosition(MMX_Motor_1);<br>    p2 = mmx.getEncoderPosition(MMX_Motor_2);<br><br>    Serial.print("M1 pos: ");<br>    Serial.print(p1);<br>    Serial.print("   M2 pos: ");<br>    Serial.print(p2);<br>    Serial.println();<br><br>    Serial.println("Program Finished");<br>}<br><br>void<br>loop()                          // After the setup the LED blinks to show<br>                                // the program is complete<br>{<br>    digitalWrite(13, HIGH);     // set the LED on<br>    delay(1000);                // wait <br>    digitalWrite(13, LOW);      // set the LED off<br>    delay(1000);                // wait<br>}<br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>

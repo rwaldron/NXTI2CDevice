@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+  <title>PSPNxgetYRJoy</title>
+</head>
+<body>
+<p><a class="wikilink" href="NXT_I2C_Device.html">NXT
+I2C Library</a>
+</p>
+<p></p>
+<h2>PSPNx.getYRJoy()</h2>
+<h4>Description</h4>
+<p>Gets the current right joystick y-axis reading<br>
+</p>
+<h4>Syntax</h4>
+<p>getYRJoy();<br>
+</p>
+<h4>Parameters</h4>
+None
+<h4>Returns</h4>
+<p>Current right joystick y-axis reading.
+</p>
+<h4>Example</h4>
+<pre>#include &lt;Wire.h&gt;              // Needs to be included here for //<br>                                // the NXTI2CDevice to work      //<br>#include &lt;NXTI2CDevice.h&gt;<br>#include &lt;PSPNx.h&gt;<br><br>PSPNx          psp;<br><br>  int        xljoy;<br>  int        yljoy;<br>  int        xrjoy;<br>  int        yrjoy;<br>  int       buttons1[8];  <br>  int       buttons2[8];  <br><br>void<br>setup()<br>{<br>    Serial.begin(9600);         // start serial for output<br><br>}<br><br>void<br>loop()<br>{<br>    char str[30];<br>    delay(1000);<br>    psp.getButtons(buttons1, buttons2);<br>    xljoy = byte(psp.getXLJoy());<br>    yljoy = byte(psp.getYLJoy()); <br>    xrjoy = byte(psp.getXRJoy()); <br>    yrjoy = byte(psp.getYRJoy());<br>    <br>    Serial.println ("         X       Y ");<br>    sprintf (str, "Left:    %d    %d", xljoy, yljoy);<br>    Serial.println (str);<br>    sprintf (str, "Right:   %d    %d", xrjoy, yrjoy);<br>    Serial.println (str);<br><br>    sprintf (str, "1:  %d %d        %d %d", buttons2[Button_L2], buttons2[Button_L1],<br>                                         buttons2[Button_R2], buttons2[Button_R1]);<br>    Serial.println (str);<br>    sprintf (str, "2:   %d          %d", buttons2[Button_Up], buttons2[Button_Triangle]);<br>    Serial.println (str);<br><br>    sprintf (str, "3:  %d %d        %d %d", buttons1[Button_Left],<br>                                          buttons1[Button_Right],<br>                                          buttons2[Button_Square],<br>                                          buttons2[Button_Circle]);<br>    Serial.println (str);<br>    sprintf (str, "4:   %d          %d", buttons1[Button_Down],<br>                                          buttons2[Button_Cross]);    <br>    Serial.println (str);<br>    Serial.println("-----------------------");   <br>}<br></pre>
+<p><a class="wikilink" href="http://arduino.cc/en/Reference/HomePage">Reference
+Home</a>
+</p>
+</body>
+</html>
